@@ -1,21 +1,25 @@
+#!/usr/bin/python3
+"""Pascal"""
+
+
 def pascal_triangle(n):
+    """fucnrion to get the number of pascal triangle"""
     if n <= 0:
         return []
 
-    triangle = []
+    pascal_triangle = [0] * n
+
     for i in range(n):
-        row = [1]
-        if triangle:
-            last_row = triangle[-1]
-            row.extend([sum(pair) for pair in zip(last_row, last_row[1:])])
-            row.append(1)
-        triangle.append(row)
+        new_row = [0] * (i+1)
+        new_row[0] = 1
+        new_row[len(new_row) - 1] = 1
 
-    return triangle
+        for j in range(1, i):
+            if j > 0 and j < len(new_row):
+                a = pascal_triangle[i - 1][j]
+                b = pascal_triangle[i - 1][j - 1]
+                new_row[j] = a + b
 
-# This shows how the function prints
-if __name__ == "__main__":
-    triangle = pascal_triangle(5)
-    for row in triangle:
-        print(row)
+        pascal_triangle[i] = new_row
 
+    return pascal_triangle
