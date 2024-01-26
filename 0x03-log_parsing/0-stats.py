@@ -3,7 +3,7 @@
 import sys
 
 
-def greatest(dict_s, total_file_size):
+def print_message(dict_s, total_file_size):
     """
     method to print
     Args:
@@ -45,8 +45,8 @@ try:
                     dict_s[code] += 1
 
             if (counter == 10):
-                greatest(dict_s, total_file_size)
+                print_message(dict_s, total_file_size)
                 counter = 0
 
 finally:
-    greatest(dict_s, total_file_size)
+    print_message(dict_s, total_file_size)
