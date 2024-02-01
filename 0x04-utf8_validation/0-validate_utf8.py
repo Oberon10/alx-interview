@@ -26,5 +26,4 @@ def validUTF8(data):
             if i >> 6 != 0b10:
                 return False
             byte_count -= 1
-    # Check if all expected continuation bytes were found
     return byte_count == 0
