@@ -45,7 +45,7 @@ def Chessboard(n: int):
         """Places the N non-attacking queens on an N * N chessboard"""
         savBoard(row, cols, col_in_row)
         for col in range(n):
-            if cols[col] == 0 and checkBoard(row, col, col_in_row):
+            if cols[col] == 0 and checkboard(row, col, col_in_row):
                 cols[col] = 1
                 col_in_row[row] = col
                 placeQueen(row + 1, cols, col_in_row)
