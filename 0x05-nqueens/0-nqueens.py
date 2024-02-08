@@ -20,14 +20,14 @@ def ChessBoard(n: int):
     result = list()
 
     def checkBoard(row, col, col_in_row):
-        """This will Checks if queen can be placed without attacking other queens"""
+        """This will Checks if queen can be placed without being attack """
         for r in range(row):
             if row - r == abs(col - col_in_row[r]):
                 return False
         return True
 
     def saveBoard(row, cols, col_in_row):
-        """This will Save the current state (position of the queens) of the board"""
+        """This will Save the current state (position of the queens)"""
         if row == n:
             con_result = []
             for r in range(n):
