@@ -6,7 +6,7 @@ n * n board - Check the README.md file for detailed info"""
 import sys
 
 
-def ChessBoard(n: int):
+def Chessboard(n: int):
     """This Program that solves the N queens problem with
     Backtracking algorithm
     Args:
@@ -19,14 +19,14 @@ def ChessBoard(n: int):
     """
     result = list()
 
-    def checkBoard(row, col, col_in_row):
+    def checkboard(row, col, col_in_row):
         """This will Checks if queen can be placed without being attack """
         for r in range(row):
             if row - r == abs(col - col_in_row[r]):
                 return False
         return True
 
-    def saveBoard(row, cols, col_in_row):
+    def savBoard(row, cols, col_in_row):
         """This will Save the current state (position of the queens)"""
         if row == n:
             con_result = []
@@ -43,7 +43,7 @@ def ChessBoard(n: int):
 
     def placeQueen(row, cols, col_in_row):
         """Places the N non-attacking queens on an N * N chessboard"""
-        saveBoard(row, cols, col_in_row)
+        savBoard(row, cols, col_in_row)
         for col in range(n):
             if cols[col] == 0 and checkBoard(row, col, col_in_row):
                 cols[col] = 1
